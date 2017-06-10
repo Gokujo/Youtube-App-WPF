@@ -5,8 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:YoutubeAppWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid Background="#1b1b1b">
-		<Button MouseLeftButtonDown="Button_MouseLeftButtonDown"/>
+		Background="{StaticResource BackgroundColour1}"
+        Title="MainWindow" Height="700" Width="1600">
+	<Window.Resources>
+		<Storyboard x:Key="LeftSideBarOpenClose">
+			<ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" BeginTime="00:00:00">
+				<SplineThicknessKeyFrame KeyTime="00:00:00" Value="-100,0,500,0" />
+				<SplineThicknessKeyFrame KeyTime="00:00:00.1" Value="0,0,392,0" />
+			</ThicknessAnimationUsingKeyFrames>
+		</Storyboard>
+	</Window.Resources>
+	<Grid>
+		<StackPanel x:Name="LeftSideBar" Background="{StaticResource BackgroundColour2}" Width="240" HorizontalAlignment="Left" Margin="-240,0,0,0" Grid.RowSpan="2">
+			<Button x:Name="button" HorizontalAlignment="Left" Margin="10,5,0,0" Width="20" Height="20"/>
+			<StackPanel.Triggers>
+				<EventTrigger RoutedEvent="ButtonBase.Click">
+					<BeginStoryboard Storyboard="{StaticResource LeftSideBarOpenClose}"/>
+				</EventTrigger>
+			</StackPanel.Triggers>
+		</StackPanel>
 	</Grid>
 </Window>

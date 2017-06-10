@@ -31,3 +31,4 @@ C:\Users\Liam\Google Drive\Youtube-App-WPF\YoutubeAppWPF\YoutubeAppWPF\obj\Debug
 C:\Users\Liam\Google Drive\Youtube-App-WPF\YoutubeAppWPF\YoutubeAppWPF\obj\Debug\YoutubeAppWPF.csproj.GenerateResource.Cache
 C:\Users\Liam\Google Drive\Youtube-App-WPF\YoutubeAppWPF\YoutubeAppWPF\obj\Debug\YoutubeAppWPF.exe
 C:\Users\Liam\Google Drive\Youtube-App-WPF\YoutubeAppWPF\YoutubeAppWPF\obj\Debug\YoutubeAppWPF.pdb
+C:\Users\Liam\Google Drive\Youtube-App-WPF\YoutubeAppWPF\YoutubeAppWPF\obj\Debug\App.baml

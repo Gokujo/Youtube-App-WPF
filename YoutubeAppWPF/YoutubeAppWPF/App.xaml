@@ -4,6 +4,10 @@
              xmlns:local="clr-namespace:YoutubeAppWPF"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
-    </Application.Resources>
+		<SolidColorBrush x:Key="BackgroundColour1" Color="#1b1b1b"/>
+		<SolidColorBrush x:Key="BackgroundColour2" Color="#2b2b2b"/>
+		<SolidColorBrush x:Key="BackgroundColour3" Color="#3b3b3b"/>
+		<SolidColorBrush x:Key="BackgroundColour4" Color="#4b4b4b"/>
+		<SolidColorBrush x:Key="TextColour" Color="#fff"/>
+	</Application.Resources>
 </Application>

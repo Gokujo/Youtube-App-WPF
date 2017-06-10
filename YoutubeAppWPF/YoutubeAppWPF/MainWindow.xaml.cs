@@ -31,10 +31,5 @@ namespace YoutubeAppWPF
             List<List<string>> thing = searchObj.SearchBasedOnKeyword("rizzo and sizz");
 
         }
-
-        private void Button_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            Console.WriteLine("nice meme");
-        }
     }
 }
