@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Net;
 using Google.Apis;
 using Google.Apis.YouTube;
+using YoutubeAppWPF.BasicClasses;
 
 namespace YoutubeAppWPF
 {
@@ -26,6 +27,14 @@ namespace YoutubeAppWPF
         public MainWindow()
         {
             InitializeComponent();
+            Search searchObj = new Search();
+            List<List<string>> thing = searchObj.SearchBasedOnKeyword("rizzo and sizz");
+
+        }
+
+        private void Button_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Console.WriteLine("nice meme");
         }
     }
 }

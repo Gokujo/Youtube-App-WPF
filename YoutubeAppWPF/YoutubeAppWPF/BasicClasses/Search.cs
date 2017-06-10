@@ -15,14 +15,16 @@ namespace YoutubeAppWPF.BasicClasses
     class Search
     {
         [STAThread]
-        public async Task SearchBasedOnKeyword(string Keyword)
+        public List<List<string>> SearchBasedOnKeyword(string Keyword)
         {
             Console.WriteLine("YouTube Data API: Search");
             Console.WriteLine("========================");
 
+            List<List<string>> test = new List<List<string>> { };
+
             try
             {
-                List<List<string>> test = await Run(Keyword);
+                test = Run(Keyword);
             }
             catch (AggregateException ex)
             {
@@ -32,10 +34,9 @@ namespace YoutubeAppWPF.BasicClasses
                 }
             }
 
-            Console.WriteLine("Press any key to continue...");
-            Console.ReadKey();
+            return test;
         }
-        private async Task<List<List<string>>> Run(string Keyword)
+        private List<List<string>> Run(string Keyword)
         {
             var youtubeService = new YouTubeService(new BaseClientService.Initializer()
             {
@@ -43,12 +44,12 @@ namespace YoutubeAppWPF.BasicClasses
                 ApplicationName = this.GetType().ToString()
             });
 
-            var searchListRequest = youtubeService.Search.List(Keyword);
-            searchListRequest.Q = "Google"; // Replace with your search term.
+            var searchListRequest = youtubeService.Search.List("snippet");
+            searchListRequest.Q = Keyword; // Replace with your search term.
             searchListRequest.MaxResults = 50;
 
             // Call the search.list method to retrieve results matching the specified query term.
-            var searchListResponse = await searchListRequest.ExecuteAsync();
+            var searchListResponse = searchListRequest.Execute();
 
             List<string> videos = new List<string>();
             List<string> channels = new List<string>();
