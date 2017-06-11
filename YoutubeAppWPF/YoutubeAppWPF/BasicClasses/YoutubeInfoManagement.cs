@@ -25,7 +25,7 @@ namespace YoutubeAppWPF.BasicClasses
             try
             {
                 var infoRequest = youtubeService.Videos.List("statistics");
-                infoRequest.Id = "fwGrdTHXw68";
+                infoRequest.Id = "fwGrdTHXw68,XKp9Rd5_iws,k8Edv3AYXiE";
 
                 var returnedData = infoRequest.Execute();
                 Console.WriteLine(returnedData);
