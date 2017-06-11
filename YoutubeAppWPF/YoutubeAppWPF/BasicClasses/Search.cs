@@ -41,7 +41,7 @@ namespace YoutubeAppWPF.BasicClasses
             var youtubeService = new YouTubeService(new BaseClientService.Initializer()
             {
                 ApiKey = "AIzaSyCXOZJH2GUbdqwxZwsjTU93lFvgdnMOVD0",
-                ApplicationName = this.GetType().ToString()
+                ApplicationName = GetType().ToString()
             });
 
             var searchListRequest = youtubeService.Search.List("snippet");
