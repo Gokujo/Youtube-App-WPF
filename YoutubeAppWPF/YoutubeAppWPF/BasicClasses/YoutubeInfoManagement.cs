@@ -14,8 +14,9 @@ namespace YoutubeAppWPF.BasicClasses
 {
     class YoutubeInfoManagement
     {
-        public void Test(String[] args)
+        public void Test()
         {
+            List<string> IDs = new List<string> { };
             var youtubeService = new YouTubeService(new BaseClientService.Initializer()
             {
                 ApiKey = "AIzaSyCXOZJH2GUbdqwxZwsjTU93lFvgdnMOVD0",
@@ -23,8 +24,9 @@ namespace YoutubeAppWPF.BasicClasses
             });
             try
             {
-                var infoRequest = youtubeService.Videos.List("snippet,contentDetails,statistics");
-                parameters.put("id", "Ks-_Mh1QhMc,anotherone,anotherone,wowowowow");
+                var infoRequest = youtubeService.Videos.List("statistics");
+                infoRequest.Id = "fwGrdTHXw68";
+
                 var returnedData = infoRequest.Execute();
                 Console.WriteLine(returnedData);
             }

@@ -28,6 +28,8 @@ namespace YoutubeAppWPF
         {
             InitializeComponent();
             Search searchObj = new Search();
+            YoutubeInfoManagement wow = new YoutubeInfoManagement();
+            wow.Test();
             List<List<string>> thing = searchObj.SearchBasedOnKeyword("rizzo and sizz");
 
         }
