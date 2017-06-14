@@ -13,8 +13,12 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Net;
-using Google.Apis;
-using Google.Apis.YouTube;
+using Google.Apis.Auth.OAuth2;
+using Google.Apis.Services;
+using Google.Apis.Upload;
+using Google.Apis.Util.Store;
+using Google.Apis.YouTube.v3;
+using Google.Apis.YouTube.v3.Data;
 using YoutubeAppWPF.BasicClasses;
 
 namespace YoutubeAppWPF
@@ -24,9 +28,14 @@ namespace YoutubeAppWPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        public SearchListResponse SearchItems = new SearchListResponse();
+
+
         public MainWindow()
         {
             InitializeComponent();
+            Search lol = new Search();
+            lol.SearchBasedOnKeyword("Rizzo?", "");
         }
     }
 }
